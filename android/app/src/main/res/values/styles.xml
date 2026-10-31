@@ -1,0 +1,12 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.CyberShieldOne" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/primary_forest_green</item>
+        <item name="android:colorPrimaryDark">@color/primary_forest_green</item>
+        <item name="android:colorAccent">@color/secondary_accent</item>
+        <item name="android:windowBackground">@color/ivory_background</item>
+        <item name="android:statusBarColor">@color/primary_forest_green</item>
+        <item name="android:navigationBarColor">@color/ivory_background</item>
+    </style>
+</resources>
+

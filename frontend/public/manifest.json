@@ -1,0 +1,20 @@
+{
+  "short_name": "CyberShield",
+  "name": "CyberShield One — FraudGuard AI",
+  "description": "Real-Time Digital Payment & Cybersecurity Fraud Detection Engine",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#F5F3ED",
+  "theme_color": "#214C3A",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "security", "business"]
+}
+

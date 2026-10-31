@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_forest_green">#214C3A</color>
+    <color name="primary_hover">#2C6A50</color>
+    <color name="secondary_accent">#B9D6C3</color>
+    <color name="ivory_background">#F5F3ED</color>
+    <color name="card_white">#FFFFFF</color>
+    <color name="text_main">#26332C</color>
+    <color name="text_secondary">#3B5369</color>
+    <color name="border_neutral">#D8D5CD</color>
+    <color name="status_success">#2E8B57</color>
+    <color name="status_warning">#D4A44B</color>
+    <color name="status_danger">#B74A4A</color>
+</resources>
+

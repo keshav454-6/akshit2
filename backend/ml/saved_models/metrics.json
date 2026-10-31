@@ -1,0 +1,37 @@
+{
+  "model_name": "FraudGuard Ensemble v1.0",
+  "model_type": "IsolationForest + RandomForest Hybrid",
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "roc_auc": 1.0,
+  "false_positive_rate": 0.0,
+  "false_negative_rate": 0.0,
+  "confusion_matrix": {
+    "tn": 1756,
+    "fp": 0,
+    "fn": 0,
+    "tp": 244
+  },
+  "feature_importances": {
+    "receiver_risk_history": 0.2243,
+    "log_amount": 0.1758,
+    "amount": 0.1369,
+    "transaction_velocity": 0.1263,
+    "amount_deviation": 0.1226,
+    "new_beneficiary_high_amount": 0.1223,
+    "transaction_frequency": 0.0316,
+    "is_new_beneficiary": 0.0239,
+    "account_age": 0.0148,
+    "high_velocity_flag": 0.0115,
+    "suspicious_collect_flag": 0.0079,
+    "is_collect_request": 0.002,
+    "hour_of_day": 0.0,
+    "is_night_transaction": 0.0,
+    "new_account_rush": 0.0
+  },
+  "evaluation_date": "2026-10-30T11:14:40.918863+00:00",
+  "is_active": true,
+  "total_test_samples": 2000
+}
