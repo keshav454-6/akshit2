@@ -1,6 +1,7 @@
 import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
@@ -47,9 +48,14 @@ app = FastAPI(
     description="Real-Time Fraud Detection for UPI and Digital Payments. Detect Before You Pay. Protect Every Transaction.",
     version=settings.VERSION,
     lifespan=lifespan,
-    docs_url="/docs",
-    redoc_url="/redoc"
+    docs_url="/api/docs",
+    redoc_url="/api/redoc",
+    openapi_url="/api/openapi.json"
 )
+
+@app.get("/docs", include_in_schema=False)
+def docs_redirect():
+    return RedirectResponse(url="/api/docs")
 
 # CORS Middleware
 app.add_middleware(

@@ -15,8 +15,8 @@ class Settings(BaseModel):
     
     # Database (PostgreSQL primary with SQLite local fallback)
     DATABASE_URL: str = os.getenv(
-        "DATABASE_URL", 
-        "sqlite:///./fraudguard.db"
+        "DATABASE_URL",
+        "sqlite:////tmp/fraudguard.db" if os.getenv("VERCEL") else "sqlite:///./fraudguard.db"
     )
     
     # CORS

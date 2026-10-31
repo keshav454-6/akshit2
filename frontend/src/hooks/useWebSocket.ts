@@ -16,9 +16,16 @@ export function useWebSocket(
   const connect = useCallback(() => {
     try {
       const getWsUrl = () => {
+        // If service binding or environment variable is set
+        const processEnv = (globalThis as any)?.process?.env;
+        if (processEnv?.BACKEND_URL) {
+          const wsProto = processEnv.BACKEND_URL.startsWith('https') ? 'wss:' : 'ws:';
+          const host = processEnv.BACKEND_URL.replace(/^https?:\/\//, '');
+          return `${wsProto}//${host}/ws/stream`;
+        }
         if (import.meta.env.VITE_WS_URL) return import.meta.env.VITE_WS_URL;
         if (typeof window !== 'undefined') {
-          // If accessing via public tunnel (ngrok, localtunnel, etc.)
+          // If accessing via public tunnel (ngrok, localtunnel, Vercel, etc.)
           if (window.location.hostname.includes('.') && !window.location.hostname.match(/^\d+\.\d+\.\d+\.\d+$/)) {
             const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
             return `${proto}//${window.location.host}/ws/stream`;

@@ -15,11 +15,11 @@ export default defineConfig({
     allowedHosts: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: process.env.BACKEND_URL || 'http://localhost:8000',
         changeOrigin: true,
       },
       '/ws': {
-        target: 'ws://localhost:8000',
+        target: process.env.BACKEND_URL ? process.env.BACKEND_URL.replace(/^http/, 'ws') : 'ws://localhost:8000',
         ws: true,
         changeOrigin: true,
       },

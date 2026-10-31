@@ -12,9 +12,14 @@ import {
 } from '../types';
 
 const getApiBaseUrl = () => {
+  // If running in Vercel or Node runtime with injected service binding
+  const processEnv = (globalThis as any)?.process?.env;
+  if (processEnv?.BACKEND_URL) {
+    return `${processEnv.BACKEND_URL}/api/v1`;
+  }
   if (import.meta.env.VITE_API_URL) return import.meta.env.VITE_API_URL;
   if (typeof window !== 'undefined') {
-    // If accessing via public tunnel (ngrok, localtunnel, etc.)
+    // If accessing on a public domain (Vercel, ngrok, custom domain)
     if (window.location.hostname.includes('.') && !window.location.hostname.match(/^\d+\.\d+\.\d+\.\d+$/)) {
       return '/api/v1';
     }
